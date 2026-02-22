@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en" class="text-text font-display scroll-smooth scroll-pt-20">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dang Anh Khoa</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body class="bg-background">
+		<header>
+			<div
+				class="group fixed top-0 z-50 bg-bar backdrop-blur-md light:backdrop-blur-xl w-full h-fit py-4 light:shadow-[0_1px_20px_#c5c5c5]"
+			>
+				<div id="general-info" class="relative flex items-center w-full">
+					<img
+						src="avatar.webp"
+						class="inline-block w-12 h-12 ml-4 md:ml-10 mr-4 rounded-full"
+						alt="My avatar"
+					/>
+					<p class="inline-block font-bold text-[15px] md:text-[18px]">
+						DANG ANH KHOA
+					</p>
+					<!-- Toggle theme -->
+					<label
+						for="toggle-theme"
+						class="relative ml-4 inline-flex items-center justify-center group/theme-icon text-xl"
+						aria-label="theme toggle button"
+						role="button"
+					>
+						<i
+							class="bx bx-moon cursor-pointer absolute opacity-100 scale-100 group-has-checked/theme-icon:opacity-0 group-has-checked/theme-icon:scale-0"
+						></i>
+						<i
+							class="bx bx-sun cursor-pointer absolute opacity-0 scale-0 group-has-checked/theme-icon:opacity-100 group-has-checked/theme-icon:scale-100"
+						></i>
+
+						<input id="toggle-theme" class="hidden" type="checkbox" />
+					</label>
+					<!-- Toggle theme -->
+
+					<nav class="hidden md:block ml-auto mr-4 md:mr-6">
+						<ul class="sm:grid grid-flow-col items-center md:gap-3 lg:gap-5">
+							<li><a class="nav-link" href="./#hero">HOME</a></li>
+							<li><a class="nav-link" href="./#about-me">ABOUT</a></li>
+							<li><a class="nav-link" href="./#projects">PROJECTS</a></li>
+							<li><a class="nav-link" href="./#contact">CONTACT</a></li>
+						</ul>
+					</nav>
+					<!-- Toggle button for navigation mobile menu -->
+					<label
+						for="navigation-toggle"
+						class="md:hidden relative navigation-toggle group/icon inline-flex items-center justify-center w-8 h-8 cursor-pointer"
+						aria-label="navigation menu toggle button"
+						role="button"
+						tabindex="0"
+						aria-controls="navigation-mobile"
+					>
+						<i
+							class="text-text fa-solid fa-bars absolute transition-transform duration-300 ease-in-out opacity-100 group-has-checked/icon:opacity-0 scale-100 group-has-checked/icon:scale-0"
+						></i>
+						<i
+							class="text-text fa-solid fa-xmark absolute transition-transform duration-300 ease-in-out opacity-0 group-has-checked/icon:opacity-100 scale-0 group-has-checked/icon:scale-100"
+						></i>
+
+						<input id="navigation-toggle" type="checkbox" class="hidden" />
+					</label>
+				</div>
+
+				<!-- Navigation menu for mobile -->
+				<nav
+					id="navigation-mobile"
+					class="w-full grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-has-[#navigation-toggle:checked]:grid-rows-[1fr] group-has-[#navigation-toggle:checked]:opacity-100 group-has-[#navigation-toggle:checked]:mt-4 group-has-[#navigation-toggle:checked]:-mb-4 border-t border-transparent group-has-[#navigation-toggle:checked]:border-white/20"
+				>
+					<ul
+						class="overflow-hidden divide-white/20 light:divide-black/20 divide-y"
+					>
+						<li>
+							<a class="nav-link-mobile" href="./#hero">HOME</a>
+						</li>
+						<li>
+							<a class="nav-link-mobile" href="./#about-me">ABOUT</a>
+						</li>
+						<li>
+							<a class="nav-link-mobile" href="./#projects">PROJECTS</a>
+						</li>
+						<li>
+							<a class="nav-link-mobile" href="./#contact">CONTACT</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div
+					id="navigation-backdrop"
+					class="absolute hidden inset-0 h-screen -z-10 bg-transparent"
+				></div>
+			</div>
+		</header>
+		<main class="relative overflow-hidden mt-20 p-responsive">
+			<!-- Hero section -->
+			<section
+				id="hero"
+				class="relative z-0 col-span-full flex-col-center gap-8 w-full h-120 min-h-fit sm:h-[90dvh] hero-bg"
+			>
+				<div class="hero-blur-layer"></div>
+				<h1
+					class="text-heading-bold text-[clamp(30px,7vw,70px)] text-center tracking-wide"
+				>
+					HI!, I'M DANG ANH KHOA
+				</h1>
+				<p class="text-subtitle mb-4 text-center text-[clamp(1rem,2vw,1.2rem)]">
+					I'm currently an undergratuate student at University Of Information
+					Technology - VNU
+				</p>
+				<a href="./#projects"
+					><div
+						class="button p-button-large text-[clamp(1.2rem,2vw,1.4rem)] font-bold"
+					>
+						PROJECTS
+					</div></a
+				>
+				<div class="sm:h-20"></div>
+			</section>
+			<!-- ABOUT ME -->
+			<section
+				id="about-me"
+				class="col-[2/3] md:grid md:grid-cols-2 pt-10 md:gap-14 pb-24 md:h-[90dvh] min-h-fit"
+			>
+				<div class="md:col-[1/3] flex-col-center gap-2">
+					<h2
+						class="text-heading-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
+					>
+						ABOUT ME
+					</h2>
+					<div class="heading-after"></div>
+				</div>
+				<!-- Introduction -->
+				<div name="introduction">
+					<h3 class="font-bold text-[clamp(20px,4vw,30px)] mt-2">
+						Introduction
+					</h3>
+					<p class="text-justify mt-3 text-[clamp(16px,2vw,20px)]/7">
+						I'm a Computer Science student who enjoys building web and mobile
+						applications. I focus on creating clean, structured and practical
+						softwares with friendly UI/UX using modern technologies. Outside of
+						coding, I enjoy solving Rubik's Cube which reflects my interest in
+						logical thinking and structured problem-solving.
+					</p>
+					<a href="./#contact"
+						><div
+							class="button p-button w-fit mt-6 text-[clamp(1rem,1.5vw,1.1rem)] font-bold"
+						>
+							CONTACT
+						</div></a
+					>
+				</div>
+				<!-- Skills -->
+				<div name="skills">
+					<h3 class="font-bold text-[clamp(20px,4vw,30px)] mt-10 md:mt-2">
+						Skills
+					</h3>
+					<div class="font-mono flex flex-wrap gap-3 w-full max-w-3xl mt-4">
+						<div class="skill-tag">C++</div>
+						<div class="skill-tag">Python (ML)</div>
+						<div class="skill-tag">HTML/CSS</div>
+						<div class="skill-tag">TailwindCSS</div>
+						<div class="skill-tag">TypeScript</div>
+						<div class="skill-tag">ReactJS</div>
+						<div class="skill-tag">NodeJS</div>
+						<div class="skill-tag">Express</div>
+						<div class="skill-tag">NextJS</div>
+						<div class="skill-tag">Git</div>
+						<div class="skill-tag">Github</div>
+						<div class="skill-tag">Responsive Design</div>
+						<div class="skill-tag">Supabase</div>
+						<div class="skill-tag">MySQL</div>
+					</div>
+				</div>
+			</section>
+
+			<!--Divider-->
+			<div class="divider"></div>
+			<!--Divider-->
+
+			<!--PROJECTS-->
+			<section
+				id="projects"
+				class="col-span-full p-responsive pt-14 md:pt-28 pb-10 bg-project-background"
+			>
+				<div class="col-[2/3]">
+					<div class="flex-col-center gap-2">
+						<h2
+							class="text-heading-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
+						>
+							PROJECTS
+						</h2>
+						<div class="heading-after"></div>
+					</div>
+					<!-- Project list -->
+					<ul class="project-list group/all">
+						<li class="project-placeholder">
+							<div class="cursor-pointer">
+								<div class="project-container group/project">
+									<div class="project-img-wrapper">
+										<img
+											class="project-img"
+											src="/placeholder.webp"
+											alt="Project description"
+										/>
+									</div>
+									<div>
+										<h3 class="project-name">
+											<span class="inline-block"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													fill="currentColor"
+													class="project-svg"
+												>
+													<path
+														fill-rule="evenodd"
+														d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+														clip-rule="evenodd"
+													/>
+												</svg>
+											</span>
+										</h3>
+										<p class="project-description"></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="project-placeholder">
+							<div class="cursor-pointer">
+								<div class="project-container group/project">
+									<div class="project-img-wrapper">
+										<img
+											class="project-img"
+											src="/placeholder.webp"
+											alt="Project description"
+										/>
+									</div>
+									<div>
+										<h3 class="project-name">
+											<span class="inline-block"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													fill="currentColor"
+													class="project-svg"
+												>
+													<path
+														fill-rule="evenodd"
+														d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+														clip-rule="evenodd"
+													/>
+												</svg>
+											</span>
+										</h3>
+										<p class="project-description"></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="project-placeholder">
+							<div class="cursor-pointer">
+								<div class="project-container group/project">
+									<div class="project-img-wrapper">
+										<img
+											class="project-img"
+											src="/placeholder.webp"
+											alt="Project description"
+										/>
+									</div>
+									<div>
+										<h3 class="project-name">
+											<span class="inline-block"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													fill="currentColor"
+													class="project-svg"
+												>
+													<path
+														fill-rule="evenodd"
+														d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+														clip-rule="evenodd"
+													/>
+												</svg>
+											</span>
+										</h3>
+										<p class="project-description"></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="project-placeholder">
+							<div class="cursor-pointer">
+								<div class="project-container group/project">
+									<div class="project-img-wrapper">
+										<img
+											class="project-img"
+											src="/placeholder.webp"
+											alt="Project description"
+										/>
+									</div>
+									<div>
+										<h3 class="project-name">
+											<span class="inline-block"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													fill="currentColor"
+													class="project-svg"
+												>
+													<path
+														fill-rule="evenodd"
+														d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+														clip-rule="evenodd"
+													/>
+												</svg>
+											</span>
+										</h3>
+										<p class="project-description"></p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--CONTACT-->
+			<section id="contact" class="relative z-0 col-span-full h-fit contact-bg">
+				<div class="contact-blur-layer"></div>
+				<div class="flex-col-center gap-2 pt-20">
+					<h2
+						class="text-heading-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
+					>
+						CONTACT
+					</h2>
+					<div class="heading-after"></div>
+				</div>
+				<div class="glow-box w-[90vw] max-w-[900px] m-auto">
+					<form
+						action="mailto:anhkhoa200511@gmail.com"
+						class="bg-border-gradient w-full mt-10 p-8 font-bold mb-32"
+					>
+						<div class="input-container">
+							<label for="name" class="input-label">Name</label>
+							<input
+								id="name"
+								name="name"
+								type="text"
+								class="input-field"
+								placeholder="Enter your name"
+								required
+							/>
+						</div>
+						<div class="input-container">
+							<label for="email" class="input-label">Email</label>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								class="input-field"
+								placeholder="Enter your email"
+								required
+							/>
+						</div>
+						<div class="input-container">
+							<label for="message" class="input-label" 2>Message</label>
+							<textarea
+								id="message"
+								name="message"
+								type="text"
+								rows="3"
+								class="input-field"
+								placeholder="Enter your message"
+								required
+							></textarea>
+						</div>
+						<input
+							type="submit"
+							value="SUBMIT"
+							class="button p-button block w-full mt-5 sm:w-fit sm:ml-auto cursor-pointer"
+						/>
+					</form>
+				</div>
+			</section>
+		</main>
+		<!-- Footer -->
+		<footer>
+			<div
+				class="flex flex-col items-center justify-start h-36 md:h-48 md:pt-6"
+			>
+				<ul class="flex-row-center gap-4 md:gap-8">
+					<li>
+						<a
+							href="mailto:anhkhoa200511@gmail.com"
+							target="_blank"
+							aria-label="Contact me via email"
+							><i class="social-icon fa-regular fa-envelope"></i
+						></a>
+					</li>
+
+					<li>
+						<a
+							href="https://www.facebook.com/lineageos17.0"
+							target="_blank"
+							aria-label="Connect with me on facebook"
+							><i class="social-icon fa-brands fa-square-facebook"></i
+						></a>
+					</li>
+
+					<li>
+						<a
+							href="https://github.com/danganhkhoa-cs"
+							target="_blank"
+							aria-label="Visit my github profile"
+							><i class="social-icon fa-brands fa-github"></i
+						></a>
+					</li>
+
+					<li>
+						<a
+							href="https://www.linkedin.com/in/dang-anh-khoa-851633380/"
+							target="_blank"
+							aria-label="Visit my linkedin profile"
+							><i class="social-icon fa-brands fa-linkedin-in"></i
+						></a>
+					</li>
+				</ul>
+
+				<p
+					class="font-bold text-center text-[0.8rem] md:text-[1rem] pt-10 md:pt-12"
+				>
+					<span
+						><i class="fa-regular fa-copyright"></i> Dang Anh Khoa 2025</span
+					>
+				</p>
+			</div>
+		</footer>
+		<script type="module" src="src/main.js"></script>
+	</body>
+</html>

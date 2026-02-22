@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Personal Porfolio",
+		"description": "A personal website is designed to optimize UI/UX and compatible with any device. This project use Vite with TailwindCSS to demonstrate the static frontend building skill.",
+		"href": "https://github.com/danganhkhoa-cs/Personal_Porfolio",
+		"image": "/project/portfolio.png",
+		"alt": "This project is a personal website which designed to optimize UI/UX and compatible with any device. This project use Vite with TailwindCSS to demonstrate the static frontend building skill"
+	},
+	{
+		"name": "Web Development Playground",
+		"description": "A comprehensive repository of self-learning and practice in various web technologies, from basic (HTML/CSS/JS) to modern frameworks (React, Tailwind, ExpressJS). It's a place to experiment with programming techniques from frontend to backend.",
+		"href": "https://github.com/danganhkhoa-cs/Web_Development_Playground",
+		"image": "/project/web_dev.png",
+		"alt": "This is a comprehensive repository of self-learning and practice in various web technologies, from basic (HTML/CSS/JS) to modern frameworks (React, Tailwind, ExpressJS). It's a place to experiment with programming techniques from frontend to backend."
+	},
+	{
+		"name": "Honkai Station",
+		"description": "A Wiki application to search information about game Honkai Impact 3. This project have role-based access control which allows ADMIN to manage application data by supabase (CRUD) and USER to look up information visually.",
+		"href": "https://github.com/danganhkhoa-cs/FLUTTER_ProjectH",
+		"image": "/project/honkai_station.png",
+		"alt": "This project is a Wiki application to search information about game Honkai Impact 3. This project have role-based access control which allows ADMIN to manage application data by supabase (CRUD) and USER to look up information visually"
+	}
+]

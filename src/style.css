@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where(.light, .light *));
+
+@theme {
+	/* FONT */
+	--font-display: "Roboto", sans-serif;
+
+	/* Main color */
+	--color-background: #000212;
+	--color-project-background: #000212;
+	--color-text: #efefef;
+	--color-button: linear-gradient(to right, #51a2ff, #7065ff, #4a3ef7);
+	--color-heading: linear-gradient(to right, #8eccff, #7065ff);
+	--color-heading-after: #efefef;
+	--color-skeleton: linear-gradient(
+		to right,
+		#1a1c2e 25%,
+		#24274a 37%,
+		#1a1c2e 63%
+	);
+
+	/* NAVIGATION BAR */
+	--color-bar: color-mix(in oklab, #fff 5%, transparent);
+	--color-nav-link-hover: linear-gradient(
+		to right,
+		#51a2ffe6 0%,
+		#7065ffe6 50%,
+		#4a3ef7e6 100%
+	);
+
+	/* HERO SECTION */
+	--color-subtitle: #c7d3fc;
+	--color-hero-blur-layer: linear-gradient(
+		to bottom,
+		#000212 0%,
+		#000212 1%,
+		transparent 10%,
+		transparent 90%,
+		#000212 100%
+	);
+
+	/* ABOUT ME SECTION */
+	--color-tag-background: #10183a;
+	--color-tag-text: white;
+
+	/* CONTACT SECTION */
+	--color-form: linear-gradient(#0e1028, #0e1028);
+	--color-contact-blur-layer: linear-gradient(
+		to bottom,
+		#000212 0%,
+		transparent 15%,
+		transparent 90%,
+		#000212 98%,
+		#000212 100%
+	);
+
+	--color-form-border: linear-gradient(
+		to right,
+		#51a2ff 0%,
+		#7065ff 50%,
+		#4a3ef7 100%
+	);
+	--color-form-border-focus: linear-gradient(to right, #bedbff, #bedbff);
+	--color-form-glow: linear-gradient(to right, #51a2ff, #7065ff, #4a3ef7);
+	--color-form-glow-focus: #bedbff;
+	--color-input-field: #000212;
+}
+
+@layer theme {
+	.light {
+		--font-display: "Roboto", sans-serif;
+		/* Main color */
+		--color-background: #fefefe;
+		--color-project-background: #fafafa;
+		--color-text: #383440;
+		--color-button: linear-gradient(to bottom right, #00d2ff, #205fe5);
+		--color-heading: linear-gradient(to right, #111111, #111111);
+		--color-heading-after: #2a8af8;
+		--color-skeleton: linear-gradient(
+			to right,
+			#e5e5e5 25%,
+			#f0f0f0 37%,
+			#e5e5e5 63%
+		);
+
+		/* NAVIGATION BAR */
+		--color-bar: color-mix(in oklab, #fff 50%, transparent);
+		--color-nav-link-hover: linear-gradient(to right, #0000000f, #0000000f);
+
+		/* HERO SECTION */
+		--color-subtitle: #2a2d2e;
+		--color-hero-blur-layer: linear-gradient(
+			to bottom,
+			transparent,
+			transparent
+		);
+
+		/* ABOUT ME SECTION */
+		--color-tag-background: #e7e7e7;
+		--color-tag-text: #666666;
+
+		/* CONTACT SECTION */
+		--color-form: linear-gradient(#fff, #fff);
+		--color-contact-blur-layer: linear-gradient(
+			to bottom,
+			transparent 0%,
+			transparent 90%,
+			#fafafa 98%,
+			#fafafa 100%
+		);
+
+		--color-form-border: linear-gradient(to right, #fff, #fff);
+		--color-form-border-focus: linear-gradient(to right, #bedbff, #bedbff);
+		--color-form-glow: linear-gradient(to right, #dbdbdb, #dbdbdb);
+		--color-form-glow-focus: #bedbff;
+		--color-input-field: #f0f0f0;
+	}
+}
+
+@layer base {
+	button {
+		@apply cursor-pointer;
+	}
+}
+
+@layer utilities {
+	.text-heading-bold {
+		@apply bg-clip-text;
+		@apply bg-(image:--color-heading);
+		@apply text-transparent font-bold;
+	}
+	.flex-col-center {
+		@apply flex flex-col justify-center items-center;
+	}
+	.flex-row-center {
+		@apply flex justify-center items-center;
+	}
+	.p-responsive {
+		@apply grid grid-cols-[minmax(1.3rem,1fr)_minmax(min-content,75rem)_minmax(1.3rem,1fr)];
+	}
+	.p-button-large {
+		@apply pt-[clamp(12px,3vw,16px)] pb-[clamp(12px,3vw,16px)] pl-[clamp(40px,14vw,75px)] pr-[clamp(40px,14vw,75px)];
+	}
+	.p-button {
+		@apply pt-[clamp(10px,2vw,12px)] pb-[clamp(10px,2vw,12px)] pl-[clamp(40px,10vw,60px)] pr-[clamp(40px,10vw,60px)];
+	}
+	.bg-border-gradient {
+		border: 1px solid transparent;
+		border-radius: 0.5rem;
+		background:
+			var(--color-form) padding-box,
+			var(--color-form-border) border-box;
+	}
+	.bg-border-gradient:focus-within {
+		background:
+			var(--color-form) padding-box,
+			var(--color-form-border-focus) border-box;
+	}
+	.loading-animation {
+	}
+}
+
+@layer components {
+	.divider {
+		@apply col-span-full light:hidden;
+		@apply h-px md:h-0.5 w-[50vw];
+		@apply bg-linear-to-r m-auto from-transparent via-blue-200 to-transparent;
+	}
+	.button {
+		@apply relative;
+		@apply rounded-md bg-(image:--color-button);
+		@apply light:text-white;
+		@apply transition duration-200 ease-in-out hover:scale-105 will-change-transform;
+	}
+	.navigation-toggle {
+		@apply hover:bg-white/5 light:hover:bg-black/5 ml-auto mr-4 p-1 rounded-md;
+		@apply text-2xl text-white;
+	}
+	.nav-link {
+		@apply relative block;
+		@apply bg-transparent py-1 px-4 md:px-6 rounded-md overflow-hidden;
+		@apply text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold tracking-wider;
+		@apply transition duration-200 ease-in-out;
+	}
+	.nav-link::before {
+		content: "";
+		@apply absolute;
+		@apply inset-0 -z-10 opacity-0;
+		@apply bg-(image:--color-nav-link-hover);
+		@apply transition duration-200 ease-in-out;
+	}
+	.nav-link:hover::before {
+		@apply opacity-100;
+	}
+	.nav-link-mobile {
+		@apply relative block;
+		@apply bg-transparent py-5 px-4 overflow-hidden;
+		@apply text-[1rem] text-center font-bold tracking-wider;
+		@apply transition-none;
+	}
+	.nav-link-mobile::before {
+		content: "";
+		@apply absolute;
+		@apply inset-0 -z-10  opacity-0;
+		@apply bg-(image:--color-nav-link-hover);
+	}
+	.nav-link-mobile:hover::before {
+		@apply opacity-100;
+	}
+	.skill-tag {
+		@apply relative cursor-default;
+		@apply w-fit bg-tag-background rounded-md py-2 px-5 border-gray-700;
+		@apply font-bold text-[clamp(16px,2vw,18px)];
+		@apply transition duration-200 ease-in-out hover:scale-110;
+	}
+	.hero-bg {
+		@apply bg-[url('/public/hero_background.webp')] light:bg-[url('/public/hero_background_light.webp')];
+		@apply bg-cover bg-center;
+	}
+	.contact-bg {
+		@apply bg-[url('/public/contact_background.webp')] light:bg-[url('/public/contact_background_light.webp')];
+		@apply bg-cover bg-center;
+	}
+	.hero-blur-layer {
+		@apply absolute;
+		@apply inset-0 -z-10;
+		@apply bg-(image:--color-hero-blur-layer);
+	}
+	.contact-blur-layer {
+		@apply absolute;
+		@apply inset-0 -z-10;
+		@apply bg-(image:--color-contact-blur-layer);
+	}
+	.heading-after {
+		@apply w-6 h-1 rounded-md bg-heading-after;
+	}
+
+	/* Projects */
+	.project-list {
+		@apply grid grid-cols-1;
+		@apply w-full mt-5 m-auto;
+	}
+	.project-container {
+		@apply md:grid md:grid-cols-2 md:items-center;
+		@apply mx-auto p-6 mb-4 md:mb-0 md:gap-10 md:max-w-[900px] xl:max-w-[1000px] rounded-3xl bg-transparent;
+		@apply group-hover/all:opacity-40 hover:opacity-100!;
+		@apply transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent md:hover:scale-105 will-change-[background-color];
+	}
+	.project-img-wrapper {
+		@apply relative;
+		@apply w-full aspect-video;
+	}
+	.project-img {
+		@apply absolute inset-0;
+		@apply md:justify-self-end;
+		@apply w-full md:m-0 m-auto rounded-md;
+		@apply aspect-video object-cover;
+	}
+	.project-name {
+		@apply relative;
+		@apply md:w-fit mt-6 md:mt-0 mb-2;
+		@apply font-bold text-center md:text-left text-2xl xl:text-3xl;
+		@apply transition duration-200 ease-in-out group-hover/project:text-shadow-[0_0_50px_white] will-change-[color];
+	}
+	.project-name::before {
+		content: "";
+		@apply absolute;
+		@apply bottom-0 left-0 right-0 m-auto h-0.5 w-0 bg-text;
+		@apply transition-[width] duration-200 ease-in-out;
+	}
+	.group\/project:hover .project-name::before {
+		@apply w-full;
+	}
+	.project-svg {
+		@apply md:hidden;
+		@apply size-5;
+		@apply transition duration-200 ease-in-out group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5 will-change-transform;
+	}
+	.project-description {
+		@apply m-auto md:m-0 max-w-2xl;
+		@apply text-center md:text-left xl:text-lg;
+	}
+	/* Projects loading */
+	.loading .project-img-wrapper {
+		@apply bg-(image:--color-skeleton) bg-size-[400%_100%] rounded-md;
+		@apply animate-[shimmer_1.3s_ease-in-out_infinite];
+	}
+	.loading .project-img {
+		@apply opacity-0;
+	}
+	.loading .project-name {
+		@apply bg-(image:--color-skeleton) bg-size-[400%_100%] w-full! h-[1.2em]! rounded;
+		@apply animate-[shimmer_1.3s_ease-in-out_infinite];
+	}
+	.loading .project-name::before {
+		@apply opacity-0;
+	}
+	.loading .project-description {
+		@apply bg-(image:--color-skeleton) bg-size-[400%_100%] w-full! min-h-30! rounded;
+		@apply animate-[shimmer_1.3s_ease-in-out_infinite];
+	}
+	@keyframes shimmer {
+		0% {
+			background-position: 100% 0;
+		}
+		100% {
+			background-position: 0 0;
+		}
+	}
+
+	.input-container {
+		@apply pb-6;
+	}
+	.input-field {
+		@apply block;
+		@apply w-full p-4 bg-input-field rounded-lg mt-2;
+		@apply text-[1rem] focus:outline-0 focus:border-0;
+	}
+	.glow-box {
+		@apply relative z-0; /* Tạo stacking context mới */
+	}
+	/* LỚP 1: Gradient mặc định */
+	.glow-box::before {
+		content: "";
+		@apply absolute -inset-2 rounded-lg -z-10 blur-md;
+		@apply transform-gpu transition-opacity duration-300 ease-in-out;
+		@apply bg-(image:--color-form-glow);
+		opacity: 1;
+	}
+	/* LỚP 2: Màu khi Focus */
+	.glow-box::after {
+		content: "";
+		@apply absolute -inset-2 rounded-lg -z-10 blur-md;
+		@apply transform-gpu transition-opacity duration-300 ease-in-out;
+		@apply bg-form-glow-focus;
+		opacity: 0;
+	}
+	.glow-box:focus-within::before {
+		opacity: 0; /* Fade out gradient cũ */
+	}
+	.glow-box:focus-within::after {
+		opacity: 1; /* Fade in màu mới */
+	}
+	.social-icon {
+		@apply p-1;
+		@apply bg-linear-to-br from-text to-text;
+		@apply text-3xl md:text-4xl bg-clip-text text-transparent font-bold;
+		@apply transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
+		@apply light:hover:from-[#00d2ff] light:hover:from-0% light:hover:to-[#205fe5];
+	}
+	@media (hover: none) {
+		.group\/project:hover .project-name::before {
+			@apply w-0;
+		}
+		.nav-link-mobile:active::before {
+			@apply opacity-100;
+		}
+		.button {
+			@apply active:scale-95 active:opacity-80 duration-75;
+		}
+		.project-name {
+			@apply group-active/project:text-[#8eccff] transition-none;
+		}
+		.project-svg {
+			@apply transition-none group-active/project:-translate-y-0.5 group-active/project:translate-x-0.5;
+		}
+		.project-container {
+			@apply active:bg-white/10 transition-none;
+		}
+		.social-icon {
+			@apply active:from-[#8eccff] active:from-40% active:to-[#7065ff] transition-none;
+		}
+	}
+}
